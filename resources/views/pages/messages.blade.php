@@ -8,5 +8,6 @@
 </head>
 <body>
    <h1><a href="/messages">Mini Twitter</a></h1>
+   <p>test</p>
 </body>
 </html>
