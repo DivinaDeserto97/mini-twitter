@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 
 Route::get('/messages', function () {
-    return view('mini-twiter');
+    return view('messages');
  });
  
