@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/messages', function () {
-    return view('pages.messages');
- });
- 
+Route::get('/messages', [MessageController::class, 'showAll']);
