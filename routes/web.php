@@ -19,3 +19,9 @@ Route::get('/', function () {
 
 
 Route::get('/messages', [MessageController::class, 'showAll']);
+
+Route::post('/create', [MessageController::class, 'create']);
+
+Route::get('/message/{id}', [MessageController::class, 'details']);
+
+Route::delete('/message/{id}', [MessageController::class, 'delete']);
