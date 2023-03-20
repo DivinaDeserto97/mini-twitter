@@ -36,8 +36,6 @@ class MessageController extends Controller
 
     public function create(Request $request)
     {
-
-
         // we create a new Message-Object
         $message = new Message();
         // we set the properties title and content
@@ -89,6 +87,12 @@ class MessageController extends Controller
 
 
         // after that we redirect to the message list again  
+        return redirect('/messages');
+    }
+    public function like(Request $request)
+    {
+        $message = Message::findOrFail($request->message_id);
+        $message->increment('like');
         return redirect('/messages');
     }
 }

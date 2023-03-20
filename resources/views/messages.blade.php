@@ -14,15 +14,15 @@
     <h2>Recent messages:</h2>
     <ul>
         <!-- loops through the $messages, that this blade template
-                           gets from MessageController.php. for each element of the loop which
-                           we call $message we print the properties (title, content
-                           and created_at in an <li> element -->
+                                   gets from MessageController.php. for each element of the loop which
+                                   we call $message we print the properties (title, content
+                                   and created_at in an <li> element -->
 
         @foreach ($messageList as $message)
             <li>
                 <b>
                     <!-- this link to the message details is created dynamically
-                                and will point to /messages/1 for the first message -->
+                                        and will point to /messages/1 for the first message -->
                     <a href="/message/{{ $message->id }}">{{ $message->title }}:</a>
                     @if (@isset($message->like))
                         <span>{{ $message->like }}</span>
@@ -35,7 +35,8 @@
                 @endif
             </li>
             <form action="/create" method="post">
-                <input type="button" name="like" value="0" style="display: none;">
+                <input type="button">
+                <input type="hidden" value="0" name="like">
             </form>
         @endforeach
 
@@ -50,7 +51,7 @@
         <input type="text" name="content" placeholder="Content"><br>
         <input type="number" name="like" value="0" style="display: none;">
         <!-- this blade directive is necessary for all form posts somewhere in between
-                               the form tags -->
+                                       the form tags -->
         @csrf
         <button type="submit">Submit</button>
     </form>
