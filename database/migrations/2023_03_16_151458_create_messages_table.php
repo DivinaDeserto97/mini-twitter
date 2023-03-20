@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->string('title');
             $table->string('content');
+            $table->integer('like');
+
             $table->id();
             $table->timestamps();
-            
         });
     }
 
